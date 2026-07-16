@@ -53,7 +53,7 @@ useSeoMeta({
 
             <ul v-else class="listing_grid">
                 <li v-for="device in items" :key="device.id">
-                    <DeviceCard :device="device" :to="`/device/${device.slug}`" :heading-level="2" />
+                    <DeviceCard :device="device" :to="`/devices/${device.slug}`" :heading-level="2" />
                 </li>
             </ul>
             
