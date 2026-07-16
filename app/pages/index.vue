@@ -43,14 +43,26 @@ useSeoMeta({
 
         <section class="listing_results" aria-live="polite" :aria-busy="isLoading">
 
+            <!-- ERROR -->
             <div v-if="error" class="listing_state" role="alert">
-                
+                <p class="listing_state_title">Couldn't load devices</p>
+                <p class="listing_state_text">{{ error.statusMessage || 'Something went wrong.' }}</p>
+                <button type="button" class="listing_retry" @click="refresh()">Try again</button>
             </div>
 
+            <!-- LOADING (client-side refetch on filter change) -->
             <ul v-else-if="isLoading" class="listing_grid" aria-hidden="true">
                 <li v-for="index in 6" :key="index" class="listing_skeleton" />
             </ul>
 
+        <!-- EMPTY -->
+            <div v-else-if="isEmpty" class="listing_state">
+                <p class="listing_state_title">No devices match these filters</p>
+                <p class="listing_state_text">Try widening the price range or clearing the brand.</p>
+            </div>
+
+
+             <!-- RESULTS -->
             <ul v-else class="listing_grid">
                 <li v-for="device in items" :key="device.id">
                     <DeviceCard :device="device" :to="`/devices/${device.slug}`" :heading-level="2" />
