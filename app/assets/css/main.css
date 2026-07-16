@@ -1,40 +1,39 @@
 :root {
-    --slate_50: #f8fafc;
-    --slate_100: #f1f5f9;
-    --slate_200: #e2e8f0;
-    --slate_300: #cbd5e1;
-    --slate_400: #94a3b8;
-    --slate_500: #64748b;
-    --slate_600: #475569;
-    --slate_700: #334155;
-    --slate_800: #1e293b;
-    --slate_900: #0f172a;
-    --slate_950: #020617;
+  /* --- primitives --- */
+  --slate_50: #f8fafc;
+  --slate_100: #f1f5f9;
+  --slate_200: #e2e8f0;
+  --slate_300: #cbd5e1;
+  --slate_400: #94a3b8;
+  --slate_500: #64748b;
+  --slate_600: #475569;
+  --slate_700: #334155;
+  --slate_800: #1e293b;
+  --slate_900: #0f172a;
+  --slate_950: #020617;
 
-    --brand_500: #6d28d9; /* Moldcell-ish purple, matches the brief header */
-    --brand_600: #5b21b6;
-    --brand_400: #8b5cf6;
+  --brand_500: #6d28d9; /* Moldcell-ish purple, matches the brief header */
+  --brand_600: #5b21b6;
+  --brand_400: #8b5cf6;
 
-    --green_500: #16a34a;
-    --amber_500: #f59e0b;
-    --red_500: #dc2626;
-    --sky_500: #0ea5e9;
+  --green_500: #16a34a;
+  --amber_500: #f59e0b;
+  --red_500: #dc2626;
+  --sky_500: #0ea5e9;
 
-
-    --space_1: 0.25rem;
-    --space_2: 0.5rem;
-    --space_3: 0.75rem;
-    --space_4: 1rem;
-    --space_5: 1.5rem;
-    --space_6: 2rem;
-    --radius_sm: 6px;
-    --radius_md: 10px;
-    --radius_lg: 16px;
-    --font_sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    --shadow_card: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.05);
-    --focus_ring: 0 0 0 3px color-mix(in srgb, var(--color_primary) 40%, transparent);
+  --space_1: 0.25rem;
+  --space_2: 0.5rem;
+  --space_3: 0.75rem;
+  --space_4: 1rem;
+  --space_5: 1.5rem;
+  --space_6: 2rem;
+  --radius_sm: 6px;
+  --radius_md: 10px;
+  --radius_lg: 16px;
+  --font_sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --shadow_card: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.05);
+  --focus_ring: 0 0 0 3px color-mix(in srgb, var(--color_primary) 40%, transparent);
 }
-
 
 :root {
   --color_bg: var(--slate_50);
@@ -93,4 +92,49 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Visible focus for keyboard users everywhere. */
+:where(a, button, input, select, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: var(--focus_ring);
+  border-radius: var(--radius_sm);
+}
+
+/* Respect reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space_4);
+}
+
+
+.visually_hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

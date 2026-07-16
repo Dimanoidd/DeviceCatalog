@@ -12,3 +12,35 @@
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color_border);
 }
+
+.app_header_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.app_header_brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space_2);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.app_header_logo {
+  color: var(--color_primary);
+  font-size: 1.4rem;
+}
+
+.app_main {
+  flex: 1;
+  padding-block: var(--space_6);
+}
+
+.app_footer {
+  border-top: 1px solid var(--color_border);
+  padding-block: var(--space_5);
+  color: var(--color_text_muted);
+  text-align: center;
+}
