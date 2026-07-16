@@ -29,6 +29,10 @@ These apply to every `.vue`, `.css` and `.ts` file:
 9. `error in nitro routes` (bug report)
 10. `update AI_artifacts`
 11. `verify the application for dead code`
+12. `verify compatibility with other devices (smartphones/tablets)`
+13. `keep the filter panel in place while only the item list scrolls`
+14. `same for the "Device Catalog" heading`
+15. `update AI_artifacts.md`
 
 ---
 
@@ -96,6 +100,32 @@ Full read-through of every `.ts`/`.vue` file, tracing each symbol's references. 
 **Loose end (not dead, but incomplete):** `index.vue:46-48` — the `v-if="error"` (`listing_state`) block renders an empty `<div>` (no message); and with `isEmpty` unused, an empty result set renders an empty `<ul>` (no "no results" state).
 
 **Verified clean:** `format.ts`, `server/utils/devices.ts` (all exports), `useDeviceFilters.ts`, both API routes, all component locals; all 7 CSS files exist, non-empty, imported — no orphans.
+
+---
+
+## Device compatibility verification (prompt 12)
+
+Ran the app (`npm run dev` → port **3003**, since 3000 was taken) and smoke-tested it:
+- `GET /api/devices` → **200**; `GET /api/devices?brand=Apple&sort=price-asc` → **200**.
+- `/` (catalog) → **200**, ~19.9 KB SSR HTML.
+- `/devices/samsung-galaxy-s25` → **200**, correct `<title>` + `detail_*` markup.
+- `/devices/does-not-exist` → **404** (correct).
+
+Responsive/layout audit (mobile-first, no horizontal-overflow risks found):
+- `.container` caps at 1200px with inline padding; `img { max-width: 100% }` — no page overflow.
+- Catalog: stacks on mobile → 2-col (`260px 1fr`) at ≥900px; grid `auto-fill minmax(240px,1fr)`, single col ≤400px.
+- Detail: stacks → `1fr 1fr` at ≥800px (`minmax(0,1fr)` would be marginally safer but media is `overflow:hidden`).
+- No test runner installed; no `chromium-cli`. A `public/device-preview.html` iframe harness was drafted but **cancelled** by the user (redirected to the sticky-scroll request).
+
+## Sticky catalog chrome (prompts 13–14)
+
+Goal: while scrolling the catalog, keep the filter panel **and** the heading in place; only the results list scrolls (≥900px only; below that everything stacks/scrolls).
+
+- **Root cause of the original non-working sticky:** `position: sticky` was on `.filter_panel`, whose containing block `.listing_sidebar` was exactly its own height (grid `align-items: start`) — no slack to stick. Moved sticky to the grid item `.listing_sidebar` (containing block = the tall grid row).
+- Removed the dead `.filter_panel` sticky rule from `FilterPanel.css` (component stays layout-agnostic; layout owns positioning).
+- Made `.listing_head` sticky at `top: 64px` (under the 64px app header), `z-index: 5`, solid `--color_bg` background, fixed height `var(--listing_head_h)`.
+- Coordinated both with a single `--listing_head_h` var (5.5rem) on `.listing`; sidebar docks at `top: calc(64px + var(--listing_head_h))` so it sits flush below the pinned heading (no overlap).
+- User follow-up tweaks in `index.css`: heading `margin: 0`, and `padding-top: var(--space_4)` added to both `.listing_sidebar` and `.listing_results` (aligns both columns under the pinned heading).
 
 ---
 
