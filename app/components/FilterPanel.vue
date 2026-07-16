@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-    import { type SortOption } from '#shared/types';
+    import { sortOptions, type SortOption } from '#shared/types';
 import './FilterPanel.css';
     
     interface Props {
@@ -74,6 +74,15 @@ import './FilterPanel.css';
                     :placeholder="String(priceRange.max)"
                 />
             </div>
+        </fieldset>
+
+        <fieldset class="filter_panel_group">
+            <legend class="filter_panel_legend">Sort</legend>
+            <label class="visually_hidden" for="filter-sort">Sort by</label>
+            <select id="filter-sort" v-model="sort" class="filter_panel_control">
+                <option :value="undefined">Default</option>
+                <option v-for="sortOption in sortOptions" :key="sortOption" :value="sortOption">{{ sortLabels[sortOption] }}</option>
+            </select>
         </fieldset>
 
         <div class="filter_panel_footer">
