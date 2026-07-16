@@ -1,0 +1,274 @@
+[
+  {
+    "id": "dev-001",
+    "slug": "samsung-galaxy-s25",
+    "brand": "Samsung",
+    "model": "Galaxy S25",
+    "category": "smartphone",
+    "priceMDL": 21999,
+    "oldPriceMDL": 23999,
+    "inStock": true,
+    "badge": "top",
+    "specs": {
+      "display": "6.2\" AMOLED 120Hz",
+      "storage": "256 GB",
+      "battery": "4000 mAh"
+    },
+    "image": "/img/galaxy-s25.webp"
+  },
+  {
+    "id": "dev-002",
+    "slug": "samsung-galaxy-a56",
+    "brand": "Samsung",
+    "model": "Galaxy A56",
+    "category": "smartphone",
+    "priceMDL": 8499,
+    "oldPriceMDL": null,
+    "inStock": true,
+    "badge": null,
+    "specs": {
+      "display": "6.7\" Super AMOLED",
+      "storage": "128 GB",
+      "battery": "5000 mAh"
+    },
+    "image": "/img/galaxy-a56.webp"
+  },
+  {
+    "id": "dev-003",
+    "slug": "iphone-16",
+    "brand": "Apple",
+    "model": "iPhone 16",
+    "category": "smartphone",
+    "priceMDL": 24499,
+    "oldPriceMDL": null,
+    "inStock": true,
+    "badge": "new",
+    "specs": {
+      "display": "6.1\" Super Retina XDR",
+      "storage": "128 GB",
+      "battery": "3561 mAh"
+    },
+    "image": "/img/iphone-16.webp"
+  },
+  {
+    "id": "dev-004",
+    "slug": "iphone-16-pro",
+    "brand": "Apple",
+    "model": "iPhone 16 Pro",
+    "category": "smartphone",
+    "priceMDL": 31999,
+    "oldPriceMDL": 33499,
+    "inStock": false,
+    "badge": "top",
+    "specs": {
+      "display": "6.3\" ProMotion 120Hz",
+      "storage": "256 GB",
+      "battery": "3582 mAh"
+    },
+    "image": "/img/iphone-16-pro.webp"
+  },
+  {
+    "id": "dev-005",
+    "slug": "xiaomi-redmi-note-14",
+    "brand": "Xiaomi",
+    "model": "Redmi Note 14",
+    "category": "smartphone",
+    "priceMDL": 4999,
+    "oldPriceMDL": 5699,
+    "inStock": true,
+    "badge": "sale",
+    "specs": {
+      "display": "6.67\" AMOLED 120Hz",
+      "storage": "128 GB",
+      "battery": "5500 mAh"
+    },
+    "image": "/img/redmi-note-14.webp"
+  },
+  {
+    "id": "dev-006",
+    "slug": "xiaomi-14t",
+    "brand": "Xiaomi",
+    "model": "14T",
+    "category": "smartphone",
+    "priceMDL": 11499,
+    "oldPriceMDL": null,
+    "inStock": true,
+    "badge": null,
+    "specs": {
+      "display": "6.67\" AMOLED 144Hz",
+      "storage": "256 GB",
+      "battery": "5000 mAh"
+    },
+    "image": "/img/xiaomi-14t.webp"
+  },
+  {
+    "id": "dev-007",
+    "slug": "google-pixel-9",
+    "brand": "Google",
+    "model": "Pixel 9",
+    "category": "smartphone",
+    "priceMDL": 18999,
+    "oldPriceMDL": null,
+    "inStock": true,
+    "badge": null,
+    "specs": {
+      "display": "6.3\" OLED 120Hz",
+      "storage": "128 GB",
+      "battery": "4700 mAh"
+    },
+    "image": "/img/pixel-9.webp"
+  },
+  {
+    "id": "dev-008",
+    "slug": "motorola-edge-50",
+    "brand": "Motorola",
+    "model": "Edge 50",
+    "category": "smartphone",
+    "priceMDL": 7299,
+    "oldPriceMDL": 7999,
+    "inStock": true,
+    "badge": "sale",
+    "specs": {
+      "display": "6.7\" pOLED 120Hz",
+      "storage": "256 GB",
+      "battery": "5000 mAh"
+    },
+    "image": "/img/edge-50.webp"
+  },
+  {
+    "id": "dev-009",
+    "slug": "samsung-galaxy-watch7",
+    "brand": "Samsung",
+    "model": "Galaxy Watch 7",
+    "category": "wearable",
+    "priceMDL": 5999,
+    "oldPriceMDL": null,
+    "inStock": true,
+    "badge": null,
+    "specs": {
+      "display": "1.5\" AMOLED",
+      "storage": "32 GB",
+      "battery": "425 mAh"
+    },
+    "image": "/img/watch-7.webp"
+  },
+  {
+    "id": "dev-010",
+    "slug": "apple-watch-se-3",
+    "brand": "Apple",
+    "model": "Watch SE 3",
+    "category": "wearable",
+    "priceMDL": 6499,
+    "oldPriceMDL": null,
+    "inStock": true,
+    "badge": "new",
+    "specs": {
+      "display": "1.78\" Retina",
+      "storage": "32 GB",
+      "battery": "18 h"
+    },
+    "image": "/img/watch-se-3.webp"
+  },
+  {
+    "id": "dev-011",
+    "slug": "airpods-pro-3",
+    "brand": "Apple",
+    "model": "AirPods Pro 3",
+    "category": "accessory",
+    "priceMDL": 5299,
+    "oldPriceMDL": 5799,
+    "inStock": true,
+    "badge": "sale",
+    "specs": {
+      "type": "TWS earbuds",
+      "anc": "Yes",
+      "battery": "6 h + case 30 h"
+    },
+    "image": "/img/airpods-pro-3.webp"
+  },
+  {
+    "id": "dev-012",
+    "slug": "galaxy-buds3-pro",
+    "brand": "Samsung",
+    "model": "Galaxy Buds 3 Pro",
+    "category": "accessory",
+    "priceMDL": 3999,
+    "oldPriceMDL": null,
+    "inStock": true,
+    "badge": null,
+    "specs": {
+      "type": "TWS earbuds",
+      "anc": "Yes",
+      "battery": "7 h + case 30 h"
+    },
+    "image": "/img/buds3-pro.webp"
+  },
+  {
+    "id": "dev-013",
+    "slug": "xiaomi-smart-band-9",
+    "brand": "Xiaomi",
+    "model": "Smart Band 9",
+    "category": "wearable",
+    "priceMDL": 899,
+    "oldPriceMDL": null,
+    "inStock": true,
+    "badge": null,
+    "specs": {
+      "display": "1.62\" AMOLED",
+      "storage": "n/a",
+      "battery": "21 days"
+    },
+    "image": "/img/band-9.webp"
+  },
+  {
+    "id": "dev-014",
+    "slug": "tcl-405",
+    "brand": "TCL",
+    "model": "405",
+    "category": "smartphone",
+    "priceMDL": 1999,
+    "oldPriceMDL": 2299,
+    "inStock": true,
+    "badge": "sale",
+    "specs": {
+      "display": "6.6\" HD+",
+      "storage": "64 GB",
+      "battery": "5000 mAh"
+    },
+    "image": "/img/tcl-405.webp"
+  },
+  {
+    "id": "dev-015",
+    "slug": "huawei-freebuds-6i",
+    "brand": "Huawei",
+    "model": "FreeBuds 6i",
+    "category": "accessory",
+    "priceMDL": 1899,
+    "oldPriceMDL": null,
+    "inStock": false,
+    "badge": null,
+    "specs": {
+      "type": "TWS earbuds",
+      "anc": "Yes",
+      "battery": "8 h + case 35 h"
+    },
+    "image": "/img/freebuds-6i.webp"
+  },
+  {
+    "id": "dev-016",
+    "slug": "nokia-110-4g",
+    "brand": "Nokia",
+    "model": "110 4G",
+    "category": "smartphone",
+    "priceMDL": 999,
+    "oldPriceMDL": null,
+    "inStock": true,
+    "badge": null,
+    "specs": {
+      "display": "1.8\" TFT",
+      "storage": "128 MB",
+      "battery": "1450 mAh"
+    },
+    "image": "/img/nokia-110.webp"
+  }
+]
