@@ -17,6 +17,8 @@ export function useDeviceFilters() {
             if (value === undefined || value === '') delete query[key]
             else query[key] = value
         }
+
+
         router.replace({ query })
     };
 

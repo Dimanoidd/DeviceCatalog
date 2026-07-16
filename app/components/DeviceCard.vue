@@ -18,6 +18,12 @@ import './DeviceCard.css'
     const discount = computed(() => discountPercent(props.device.priceMDL, props.device.oldPriceMDL))
     const imageFailed = ref(false)
 
+
+    const badgeLabel: Record<NonNullable<Device['badge']>, string> = {
+        top: 'Top',
+        new: 'New',
+        sale: 'Sale',
+    };
 </script>
 
 <template>
@@ -27,12 +33,15 @@ import './DeviceCard.css'
   >
     <div class="device_card_media">
       <slot name="media">
-        <img v-if="!imageFailed"  width="400" height="300"
+        <img
+          v-if="!imageFailed"
           class="device_card_img"
           :src="device.image"
           :alt="`${device.brand} ${device.model}`"
           loading="lazy"
           decoding="async"
+          width="400"
+          height="300"
           @error="imageFailed = true"
         />
         <div v-else class="device_card_placeholder" role="img" :aria-label="`${device.brand} ${device.model}`">
@@ -41,6 +50,7 @@ import './DeviceCard.css'
       </slot>
 
       <span v-if="device.badge" class="device_card_badge" :data-badge="device.badge">
+        {{ badgeLabel[device.badge] }}
       </span>
 
       <span v-if="!device.inStock" class="device_card_stock">Out of stock</span>
@@ -55,7 +65,9 @@ import './DeviceCard.css'
       </component>
 
       <div class="device_card_prices">
+        <span class="device_card_price">{{ formatMdl(device.priceMDL) }}</span>
         <template v-if="discount !== null">
+          <span class="device_card_old">{{ formatMdl(device.oldPriceMDL!) }}</span>
           <span class="device_card_discount">−{{ discount }}%</span>
         </template>
       </div>

@@ -43,7 +43,15 @@ useSeoMeta({
 
         <section class="listing_results" aria-live="polite" :aria-busy="isLoading">
 
-            <ul class="listing_grid">
+            <div v-if="error" class="listing_state" role="alert">
+                
+            </div>
+
+            <ul v-else-if="isLoading" class="listing_grid" aria-hidden="true">
+                <li v-for="index in 6" :key="index" class="listing_skeleton" />
+            </ul>
+
+            <ul v-else class="listing_grid">
                 <li v-for="device in items" :key="device.id">
                     <DeviceCard :device="device" :to="`/device/${device.slug}`" :heading-level="2" />
                 </li>
