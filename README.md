@@ -1,75 +1,98 @@
-# Nuxt Minimal Starter
+# Mini Device Catalog
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Requirements
 
-## Setup
+- Node.js 22+
+- npm
 
-Make sure to install dependencies:
+## Installation
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+The application will be available at:
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+```
+http://localhost:3000
 ```
 
-Locally preview production build:
+---
 
-```bash
-# npm
-npm run preview
+# Project Structure
 
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+```
+app/
+components/
+pages/
+server/
+shared/
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+
+# Key Decisions
+
+## SSR
+
+The catalog page is server-side rendered to provide fast initial rendering and SEO-friendly output.
+
+## Server-side filtering
+
+Filtering and sorting are implemented in the Nitro API instead of the client. This keeps the browser logic simple and follows the assignment requirements.
+
+## Shared validation
+
+Zod schemas are shared between the client and the server so both sides use the same data contract.
+
+## URL as source of truth
+
+Catalog filters are synchronized with URL query parameters. This allows filtered views to be shared and restored after page reload.
+
+## Reusable components
+
+The DeviceCard component is designed as a reusable component with typed props and CSS custom properties for theming.
+
+---
+
+# Trade-offs
+
+Because of the assignment time limit, I intentionally:
+
+- kept the API file-based instead of introducing a repository/service layer;
+- used simple numeric price inputs instead of a range slider;
+- did not add global state management because the URL already stores the filter state;
+- implement i18n. For now, persisting the selected language in cookies is unnecessary, as it is 
+    not required at this stage.
+
+---
+
+# AI Usage
+
+AI tools were used as a development assistant for:
+
+- understanding the assignment;
+- discussing architecture alternatives;
+- generating implementation drafts;
+- reviewing TypeScript types;
+- reviewing accessibility and responsive layout.
+
+All generated suggestions were reviewed and adapted before being included in the final solution.
+
+Additional AI artifacts are available `AI_artifacts.md`.
+
+---
+
+# Future Improvements
+
+With additional time I would implement:
+
+- pagination;
+- search by device name;
+- unit/component tests;
+- image optimization;
+- API pagination;
+- caching;
+- animations for loading states;
+- localization (RO/RU/EN).

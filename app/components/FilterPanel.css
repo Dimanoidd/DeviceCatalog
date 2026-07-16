@@ -75,11 +75,3 @@
 .filter_panel_reset:hover {
   text-decoration: underline;
 }
-
-/* On wide screens the panel becomes a sticky sidebar (see listing page). */
-@media (min-width: 900px) {
-  .filter_panel {
-    position: sticky;
-    top: calc(64px + var(--space_4));
-  }
-}

@@ -1,3 +1,8 @@
+.listing {
+  /* Height of the pinned heading band; also used to offset the sticky sidebar. */
+  --listing_head_h: 5.5rem;
+}
+
 .listing_head {
   margin-bottom: var(--space_5);
 }
@@ -22,6 +27,28 @@
   .listing_layout {
     grid-template-columns: 260px 1fr;
     align-items: start;
+  }
+
+  /* Pin the heading band just below the app header; only the list scrolls. */
+  .listing_head {
+    position: sticky;
+    top: 64px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: var(--listing_head_h);
+    /* margin: 0 0 var(--space_4); */
+    margin: 0px;
+    background: var(--color_bg);
+  }
+
+  /* Keep the filters in place, docked right below the pinned heading. */
+  .listing_sidebar {
+    position: sticky;
+    top: calc(64px + var(--listing_head_h));
+    align-self: start;
+    padding-top: var(--space_4);
   }
 }
 
@@ -92,4 +119,8 @@
   background: var(--color_primary);
   border: 0;
   border-radius: var(--radius_md);
+}
+
+.listing_results {
+    padding-top: var(--space_4);
 }
