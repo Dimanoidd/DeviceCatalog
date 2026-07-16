@@ -54,3 +54,10 @@ export const querySchema = z.object({
 });
 
 export type DeviceQuery = z.infer<typeof querySchema>
+
+export interface DevicesResponse {
+  items: Device[]
+  total: number
+  brands: string[]
+  priceBounds: { min: number; max: number }
+}
