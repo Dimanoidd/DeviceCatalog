@@ -1,0 +1,96 @@
+:root {
+    --slate_50: #f8fafc;
+    --slate_100: #f1f5f9;
+    --slate_200: #e2e8f0;
+    --slate_300: #cbd5e1;
+    --slate_400: #94a3b8;
+    --slate_500: #64748b;
+    --slate_600: #475569;
+    --slate_700: #334155;
+    --slate_800: #1e293b;
+    --slate_900: #0f172a;
+    --slate_950: #020617;
+
+    --brand_500: #6d28d9; /* Moldcell-ish purple, matches the brief header */
+    --brand_600: #5b21b6;
+    --brand_400: #8b5cf6;
+
+    --green_500: #16a34a;
+    --amber_500: #f59e0b;
+    --red_500: #dc2626;
+    --sky_500: #0ea5e9;
+
+
+    --space_1: 0.25rem;
+    --space_2: 0.5rem;
+    --space_3: 0.75rem;
+    --space_4: 1rem;
+    --space_5: 1.5rem;
+    --space_6: 2rem;
+    --radius_sm: 6px;
+    --radius_md: 10px;
+    --radius_lg: 16px;
+    --font_sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --shadow_card: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.05);
+    --focus_ring: 0 0 0 3px color-mix(in srgb, var(--color_primary) 40%, transparent);
+}
+
+
+:root {
+  --color_bg: var(--slate_50);
+  --color_surface: #ffffff;
+  --color_surface_2: var(--slate_100);
+  --color_text: var(--slate_900);
+  --color_text_muted: var(--slate_500);
+  --color_border: var(--slate_200);
+  --color_primary: var(--brand_500);
+  --color_primary_contrast: #ffffff;
+  --color_price: var(--slate_900);
+  --color_old_price: var(--slate_400);
+
+  --badge_top_bg: var(--brand_500);
+  --badge_new_bg: var(--sky_500);
+  --badge_sale_bg: var(--red_500);
+  --badge_fg: #ffffff;
+
+  --color_instock: var(--green_500);
+  --color_outofstock: var(--slate_400);
+}
+
+:root[data-theme='dark'] {
+  --color_bg: var(--slate_950);
+  --color_surface: var(--slate_900);
+  --color_surface_2: var(--slate_800);
+  --color_text: var(--slate_100);
+  --color_text_muted: var(--slate_400);
+  --color_border: var(--slate_700);
+  --color_primary: var(--brand_400);
+  --color_primary_contrast: var(--slate_950);
+  --color_price: var(--slate_50);
+  --color_old_price: var(--slate_500);
+
+  --badge_top_bg: var(--brand_400);
+  --badge_new_bg: var(--sky_500);
+  --badge_sale_bg: var(--red_500);
+  --badge_fg: var(--slate_950);
+
+  --shadow_card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font_sans);
+  background: var(--color_bg);
+  color: var(--color_text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}

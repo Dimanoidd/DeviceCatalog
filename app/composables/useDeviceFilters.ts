@@ -1,3 +1,5 @@
+import { sortOptions, type SortOption } from '#shared/types';
+
 
 export function useDeviceFilters() {
 
@@ -43,5 +45,15 @@ export function useDeviceFilters() {
         patchQuery({ maxPrice: value == null || Number.isNaN(value) ? undefined : String(value) }),
     })
 
-    return { brand, minPrice, maxPrice }
+    const sort = computed<SortOption | undefined>({
+        get: () => {
+        const rawSort = route.query.sort
+        return typeof rawSort === 'string' && (sortOptions as readonly string[]).includes(rawSort)
+            ? (rawSort as SortOption)
+            : undefined
+        },
+        set: (value) => patchQuery({ sort: value }),
+    })
+
+    return { brand, minPrice, maxPrice, sort }
 }
